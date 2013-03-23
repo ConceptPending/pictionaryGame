@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="utf-8" />
-   <title>Desktops and Tablets</title>
- 
-   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
- 
-   <script type="text/javascript">
-      $(document).ready(function () {
+<html>
+    <head>
+    <meta charset="UTF-8" />
+    <title>Pictionary!</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    </head>
+    <body>
+    <header> </header>
+    <div id="canvasDiv">
+        <canvas id="canvasSignature" width="500" height="500">
+        Your browser does not support canvas!
+        </canvas>
+    </div>
+    <script>
+        $(document).ready(function () {
          initialize();
       });
  
@@ -143,16 +149,6 @@
                      .unbind("mouseup")
                      .unbind("mouseout");
       }
-   </script>
-   
-</head>
- 
-<body>
-   <h1>Canvas test</h1>
- 
-   <div id="canvasDiv">
-      <!-- It's bad practice (to me) to put your CSS here.  I'd recommend the use of a CSS file! -->
-      <canvas id="canvasSignature" width="500px" height="500px" style="border:2px solid #000000;"></canvas>
-   </div>
-</body>
-</html> 
+    </script>
+    </body>
+</html>
