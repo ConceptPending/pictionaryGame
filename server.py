@@ -9,9 +9,15 @@ from email.mime.text import MIMEText
 import random
 import cgi
 
+games = {}
+
 @route('/')
 def index():
     return template('template')
+
+@route('/control')
+def control_display():
+    return template('control')
 
 ####################
 #  Define Session  #
