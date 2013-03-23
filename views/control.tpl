@@ -53,7 +53,7 @@
         {
             case "touchstart": type = "mousedown"; break;
             case "touchmove":  type="mousemove"; break;        
-            case "touchend":   type="mouseup"; break;
+            case "touchend":   saveCanvas();
             default: return;
         }
 
