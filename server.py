@@ -8,6 +8,13 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import random
 import cgi
+import pusher
+
+pusher.app_id = os.environ['pusher_app_id']
+pusher.key = os.environ['pusher_key']
+pusher.secret = os.environ['pusher_secret']
+
+p = pusher.Pusher()
 
 games = {}
 
@@ -18,6 +25,12 @@ def index():
 @route('/control')
 def control_display():
     return template('control')
+
+@post('/save')
+def push_state():
+    json = request.forms.get('json')
+    p['test_channel'].trigger('my_event', json)
+    return 1
 
 ####################
 #  Define Session  #
