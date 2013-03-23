@@ -30,6 +30,7 @@
         context = canvas.getContext("2d");
         canvas.isDrawingMode=true;
         canvas.on('mouse:up', function(){saveCanvas()});
+        canvas.on('touchend', function(){saveCanvas()});
         canvas.setHeight(window.innerHeight);
         canvas.setWidth(960);
     }
