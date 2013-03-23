@@ -17,3 +17,13 @@ body {
     background-color: #F1F1F1;
     color: #333;
 }
+
+.pushButton {
+    height: 200px;
+    margin: 0;
+    padding: 0;
+    width: 960px;
+    border: 0;
+    background-color: #F1F1F1;
+    font-size: 150px;
+}
