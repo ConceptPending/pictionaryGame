@@ -148,6 +148,16 @@
          $(sigCanvas).unbind("mousemove")
                      .unbind("mouseup")
                      .unbind("mouseout");
+         
+         saveCanvas()
+      }
+      
+      function saveCanvas() {
+        // convert canvas to json string
+        var json = JSON.stringify(sigCanvas.toJSON());
+        $.post('/save', {json:json}, function(resp){
+        
+        }, 'json');
       }
     </script>
     </body>

@@ -149,6 +149,12 @@
                      .unbind("mouseup")
                      .unbind("mouseout");
       }
+      
+      function loadCanvas(json) {
+        sigCanvas.loadFromJSON(json);
+        sigCanvas.renderALL();
+        canvas.calulateOffset();
+      }
     </script>
     </body>
 </html>
