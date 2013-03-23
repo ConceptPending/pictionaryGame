@@ -1,0 +1,19 @@
+#container, #canvas {
+    width: 960px;
+    margin: auto;
+    background-color: #3AA;
+}
+
+body {
+    background-color: #377;
+    margin: 0;
+    padding: 0;
+}
+
+.control_input {
+    position: absolute;
+    margin: auto;
+    width: 900px;
+    background-color: #F1F1F1;
+    color: #333;
+}

@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <meta charset="UTF-8" />
-    <title>Pictionary!</title>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="static/fabric.min.js"></script>
+        <meta charset="UTF-8" />
+        <title>Pictionary!</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <link href='static/default.css' rel='stylesheet' type='text/css'>
+        <script type="text/javascript" src="static/fabric.min.js"></script>
     </head>
     <body>
     <header> </header>
-    <div id="canvasDiv">
-        <canvas id="canvas" width="500" height="500" onClick="saveCanvas()">
-        Your browser does not support canvas!
-        </canvas>
+    <div id="container">
+        <div id="canvasDiv">
+            <canvas id="canvas">
+            Your browser does not support canvas!
+            </canvas>
+        </div>
     </div>
     <script>
-    var picCanvas
+    var canvas
     var context
     
     $(document).ready(function () {
@@ -23,15 +26,17 @@
     
     function initialize() {
     // get references to the canvas element as well as the 2D drawing context
-        picCanvas = new fabric.Canvas('canvas');
-        context = picCanvas.getContext("2d");
-        picCanvas.isDrawingMode=true;
-        picCanvas.on('mouse:up', function(){saveCanvas()});
+        canvas = new fabric.Canvas('canvas');
+        context = canvas.getContext("2d");
+        canvas.isDrawingMode=true;
+        canvas.on('mouse:up', function(){saveCanvas()});
+        canvas.setHeight(window.innerHeight);
+        canvas.setWidth(960);
     }
     
     function saveCanvas() {
         // convert canvas to json string
-        var json = JSON.stringify(picCanvas.toJSON());
+        var json = JSON.stringify(canvas.toJSON());
         $.post('/save', {json:json}, function(resp){
         
         }, 'json');

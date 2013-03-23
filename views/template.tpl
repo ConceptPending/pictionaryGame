@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>Pictionary!</title>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <link href='static/default.css' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="static/fabric.min.js"></script>
     <style>
         #canvas {
@@ -14,14 +15,18 @@
     </head>
     <body>
     <header> </header>
-    <div id="canvasDiv">
-        <canvas id="canvas" width="500" height="500">
-        Your browser does not support canvas!
-        </canvas>
+    <div id="container">
+        <div id="canvasDiv">
+            <canvas id="canvas">
+            Your browser does not support canvas!
+            </canvas>
+        </div>
     </div>
     <script>
         var canvas
         canvas = new fabric.Canvas('canvas')
+        canvas.setHeight(window.innerHeight);
+        canvas.setWidth(960);
         
         function loadCanvas(json) {
             canvas.loadFromJSON(json);
