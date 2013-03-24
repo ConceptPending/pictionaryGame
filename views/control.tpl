@@ -33,7 +33,7 @@
         canvas.on('mouse:up', function(){saveCanvas()});
         canvas.setHeight(window.innerHeight - 200);
         canvas.setWidth(960);
-        document.addEventListener("touchend", saveCanvas(), true);
+        document.getElementById('canvas').addEventListener('touchend', saveCanvas());
     }
     
     function saveCanvas() {
@@ -42,13 +42,6 @@
         $.post('/save', {json:json}, function(resp){
         
         }, 'json');
-    }
-    
-    function init() 
-    {
-        document.addEventListener("touchstart", touchHandler, true);
-        document.addEventListener("touchmove", touchHandler, true);
-        document.addEventListener("touchcancel", touchHandler, true);    
     }
     </script>
     </body>
