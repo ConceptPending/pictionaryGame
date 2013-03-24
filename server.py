@@ -30,7 +30,7 @@ def control_display():
 def push_state():
     json = request.forms.get('json')
     p['test_channel'].trigger('my_event', json)
-    return 1
+    return {'success' : 'yes'}
 
 ####################
 #  Define Session  #
