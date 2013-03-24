@@ -34,8 +34,8 @@ body {
 }
 
 #trash {
-    bottom: 315px;
-    right: 25px;
+    bottom: 305px;
+    right: 5px;
     position: absolute;
     padding: 50px;
 }
