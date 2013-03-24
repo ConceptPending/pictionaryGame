@@ -15,7 +15,7 @@
             Your browser does not support canvas!
             </canvas>
         </div>
-        <input type="button" class="pushButton" value="Draw!" onClick="saveCanvas()">
+        <input type="button" class="pushButton" id="pushButton" value="Draw!">
     </div>
     <script>
     var canvas
@@ -35,6 +35,8 @@
         canvas.setWidth(960);
         canvas.addEventListener('touchend', saveCanvas(), false);
     }
+    
+    $("#pushButton").click(saveCanvas());
     
     function saveCanvas() {
         // convert canvas to json string
