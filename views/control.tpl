@@ -33,7 +33,7 @@
         canvas.on('mouse:up', function(){saveCanvas()});
         canvas.setHeight(window.innerHeight - 200);
         canvas.setWidth(960);
-        canvas.addEventListener('touchend', saveCanvas, false);
+        canvas.addEventListener('touchend', saveCanvas(), false);
     }
     
     function saveCanvas() {
