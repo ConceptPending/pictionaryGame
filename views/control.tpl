@@ -15,7 +15,6 @@
             Your browser does not support canvas!
             </canvas>
         </div>
-        <input type="button" class="pushButton" id="pushButton" value="Draw!">
     </div>
     <script>
     var canvas
@@ -31,7 +30,7 @@
         context = canvas.getContext("2d");
         canvas.isDrawingMode=true;
         canvas.on('mouse:up', function(){saveCanvas()});
-        canvas.setHeight(window.innerHeight - 200);
+        canvas.setHeight(window.innerHeight);
         canvas.setWidth(960);
         canvas.addEventListener('touchend', saveCanvas(), false);
     }
