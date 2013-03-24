@@ -17,7 +17,7 @@ pusher.secret = os.environ['pusher_secret']
 p = pusher.Pusher()
 
 games = {}
-words = ['tomato', 'kitten', 'octopus', ]
+words = ['tomato', 'kitten', 'octopus']
 
 @route('/')
 def index():
@@ -25,7 +25,8 @@ def index():
 
 @route('/control')
 def control_display():
-    word = random.shuffle(words)[0]
+    random.shuffle(words)
+    word = words[0]
     return template('control', word=word)
 
 @post('/save')
