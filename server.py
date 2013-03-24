@@ -24,13 +24,15 @@ def index():
 
 @route('/control')
 def control_display():
-    return template('control')
+    word = "tomato"
+    return template('control', word=word)
 
 @post('/save')
 def push_state():
     json = request.forms.get('json')
     p['test_channel'].trigger('my_event', json)
     return {'success' : 'yes'}
+
 
 ####################
 #  Define Session  #

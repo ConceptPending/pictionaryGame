@@ -15,6 +15,9 @@
             Your browser does not support canvas!
             </canvas>
         </div>
+        <div id="word">
+            Your word is: <span class="word_span">{{word}}</span>
+        </div>
     </div>
     <div id="trash">
         <img src="static/trash.png" onClick="empty()">
@@ -33,7 +36,7 @@
         context = canvas.getContext("2d");
         picCanvas.isDrawingMode=true;
         picCanvas.on('mouse:up', function(){saveCanvas()});
-        picCanvas.setHeight(window.innerHeight);
+        picCanvas.setHeight(window.innerHeight - 300);
         picCanvas.setWidth(960);
         //canvas.addEventListener('touchend', saveCanvas(), false);
         picCanvas.freeDrawingColor = '#F1F1F1';
