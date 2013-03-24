@@ -34,9 +34,10 @@ body {
 }
 
 #trash {
-    bottom: 0;
-    right: 0;
+    bottom: 315px;
+    right: 25px;
     position: absolute;
+    padding: 50px;
 }
 
 #word {
