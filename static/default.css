@@ -12,18 +12,29 @@ body {
 
 .control_input {
     position: absolute;
-    margin: auto;
+    margin-left: -450px;
+    margin-top: -200px;
     width: 900px;
+    left: 50%;
     background-color: #F1F1F1;
     color: #333;
+    top: 50%;
+    z-index: 2;
 }
 
 .pushButton {
     height: 200px;
     margin: 0;
     padding: 0;
-    width: 960px;
+    width: 900px;
     border: 0;
     background-color: #F1F1F1;
+    color: #555;
     font-size: 150px;
+}
+
+#trash {
+    bottom: 0;
+    right: 0;
+    position: absolute;
 }

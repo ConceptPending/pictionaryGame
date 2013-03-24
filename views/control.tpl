@@ -16,6 +16,9 @@
             </canvas>
         </div>
     </div>
+    <div id="trash">
+        <img src="static/trash.png" onClick="empty()">
+    </div>
     <script>
     var picCanvas
     var context
@@ -35,6 +38,11 @@
         //canvas.addEventListener('touchend', saveCanvas(), false);
         picCanvas.freeDrawingColor = '#F1F1F1';
         picCanvas.freeDrawingLineWidth =10;
+    }
+    
+    function empty() {
+        picCanvas.clear();
+        saveCanvas();
     }
     
     function saveCanvas() {

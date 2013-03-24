@@ -22,7 +22,17 @@
             </canvas>
         </div>
     </div>
+    <div class="control_input">
+        <h1>Welcome to Pictionary!</h1>
+        <h3>It's not really Pictionary... I don't have that trademark.</h3>
+        <p>Anyway, direct a mobile device or tablet to http://pictionary.herokuapp.com/control</p>
+        <p>You'll draw on the mobile the word that appears there.</p>
+        <input type="button" class="pushButton" onClick="removeDiv()" value="BEGIN">
+    </div>
     <script>
+        function removeDiv() {
+            $(".control_input").remove();
+        }
         var canvas
         canvas = new fabric.Canvas('canvas')
         canvas.setHeight(window.innerHeight);
