@@ -17,7 +17,7 @@
         </div>
     </div>
     <script>
-    var canvas
+    var picCanvas
     var context
     
     $(document).ready(function () {
@@ -26,20 +26,20 @@
     
     function initialize() {
     // get references to the canvas element as well as the 2D drawing context
-        canvas = new fabric.Canvas('canvas');
+        picCanvas = new fabric.Canvas('canvas');
         context = canvas.getContext("2d");
-        canvas.isDrawingMode=true;
-        canvas.on('mouse:up', function(){saveCanvas()});
-        canvas.setHeight(window.innerHeight);
-        canvas.setWidth(960);
-        canvas.addEventListener('touchend', saveCanvas(), false);
+        picCanvas.isDrawingMode=true;
+        picCanvas.on('mouse:up', function(){saveCanvas()});
+        picCanvas.setHeight(window.innerHeight);
+        picCanvas.setWidth(960);
+        //canvas.addEventListener('touchend', saveCanvas(), false);
+        picCanvas.freeDrawingColor = '#F1F1F1';
+        picCanvas.freeDrawingLineWidth =10;
     }
-    
-    $("#pushButton").click(saveCanvas());
     
     function saveCanvas() {
         // convert canvas to json string
-        var json = JSON.stringify(canvas.toJSON());
+        var json = JSON.stringify(picCanvas.toJSON());
         $.post('/save', {json:json}, function(resp){
         
         }, 'json');
