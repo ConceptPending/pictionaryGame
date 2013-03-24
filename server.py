@@ -17,7 +17,7 @@ pusher.secret = os.environ['pusher_secret']
 p = pusher.Pusher()
 
 games = {}
-words = ['tomato', 'kitten', 'octopus']
+words =['tomato','kitten','octopus',"horse","horse","trip","round","park","state","baseball","dominoes","hockey","whisk","mattress","circus","cowboy","skate","thief","spring","toast","roller","half","door"]
 
 @route('/')
 def index():
