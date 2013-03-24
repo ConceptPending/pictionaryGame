@@ -20,7 +20,7 @@
         </div>
     </div>
     <div id="trash">
-        <img src="static/trash.png" onClick="empty()">
+        <img src="static/trash.png" width="80px" height="112px" onClick="empty()">
     </div>
     <script>
     var picCanvas
