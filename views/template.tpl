@@ -25,7 +25,7 @@
     <div class="control_input">
         <h1>Welcome to Pictionary!</h1>
         <h3>It's not really Pictionary... I don't have that trademark.</h3>
-        <p>Anyway, direct a mobile device or tablet to http://pictionary.herokuapp.com/control</p>
+        <p>Anyway, direct a mobile device or tablet to http://pictionary.herokuapp.com/control/{{id}}</p>
         <p>You'll draw on the mobile the word that appears there.</p>
         <input type="button" class="pushButton" onClick="removeDiv()" value="BEGIN">
     </div>
@@ -55,7 +55,7 @@
         WEB_SOCKET_DEBUG = true;
 
         var pusher = new Pusher('a0bf5f1d7d2847871c10');
-        var channel = pusher.subscribe('test_channel');
+        var channel = pusher.subscribe('{{"pict_%s" % id}}');
         channel.bind('my_event', function(data) {
           loadCanvas(data);
         });

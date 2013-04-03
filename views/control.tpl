@@ -51,7 +51,7 @@
     function saveCanvas() {
         // convert canvas to json string
         var json = JSON.stringify(picCanvas.toJSON());
-        $.post('/save', {json:json}, function(resp){
+        $.post('/save/{{id}}', {json:json}, function(resp){
         
         }, 'json');
     }

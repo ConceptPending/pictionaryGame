@@ -16,23 +16,28 @@ pusher.secret = os.environ['pusher_secret']
 
 p = pusher.Pusher()
 
+def random_string(length=6):
+    pool = string.letters + string.digits
+    return ''.join(random.choice(pool) for i in xrange(length))
+
 games = {}
 words =['tomato','kitten','octopus',"horse","horse","trip","round","park","state","baseball","dominoes","hockey","whisk","mattress","circus","cowboy","skate","thief","spring","toast","roller","half","door"]
 
 @route('/')
 def index():
-    return template('template')
+    id = random_string()
+    return template('template', id=id)
 
-@route('/control')
-def control_display():
+@route('/control/<id>')
+def control_display(id):
     random.shuffle(words)
     word = words[0]
-    return template('control', word=word)
+    return template('control', word=word, id=id)
 
-@post('/save')
-def push_state():
+@post('/save/<id>')
+def push_state(id):
     json = request.forms.get('json')
-    p['test_channel'].trigger('my_event', json)
+    p['pict_%s' % id].trigger('my_event', json)
     return {'success' : 'yes'}
 
 
