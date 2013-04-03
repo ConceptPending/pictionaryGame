@@ -4,8 +4,8 @@
         <meta charset="UTF-8" />
         <title>Pictionary!</title>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        <link href='static/default.css' rel='stylesheet' type='text/css'>
-        <script type="text/javascript" src="static/fabric.min.js"></script>
+        <link href='/static/default.css' rel='stylesheet' type='text/css'>
+        <script type="text/javascript" src="/static/fabric.min.js"></script>
     </head>
     <body>
     <header> </header>
