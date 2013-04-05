@@ -19,13 +19,12 @@ body {
 .control_input {
     position: absolute;
     margin-left: -450px;
-    margin-top: -300px;
     padding: 0 25px;
     width: 850px;
     left: 50%;
     background-color: #F1F1F1;
     color: #333;
-    top: 50%;
+    top: 0;
     z-index: 2;
 }
 

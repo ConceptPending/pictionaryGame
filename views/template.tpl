@@ -27,18 +27,13 @@
     <div class="control_input">
         <h1>Welcome to Pictionary!</h1>
         <h3>It's not really Pictionary... I don't have that trademark.</h3>
-        <p>Anyway, direct a mobile device or tablet to <a href="http://pictionary.herokuapp.com/control/{{id}}">http://pictionary.herokuapp.com/control/{{id}}</a></p>
         <p>
-            OR... Scan this QR code in a mobile phone:
+            Anyway, scan this QR code in a mobile phone:
         </p>
         <div id="qr"></div>
-        <p>You'll draw on the mobile the word that appears there.</p>
-        <input type="button" class="pushButton" onClick="removeDiv()" value="BEGIN">
+        <p>If you can't scan a QR code, share this link with the phone you want to draw with: <a href="http://pictionary.herokuapp.com/control/{{id}}">http://pictionary.herokuapp.com/control/{{id}}</a></p>
     </div>
     <script>
-        function removeDiv() {
-            $(".control_input").remove();
-        }
         var canvas
         canvas = new fabric.Canvas('canvas')
         canvas.setHeight(window.innerHeight);
@@ -65,7 +60,19 @@
         channel.bind('my_event', function(data) {
           loadCanvas(data);
         });
+        channel.bind('start_event', function() {
+            hide_intro();
+        });
+        
         document.getElementById('qr').innerHTML = create_qrcode("http://pictionary.herokuapp.com/control/{{id}}");
+        
+        var hide_intro = function() {
+            $(".control_input").slideUp(2000);
+        }
+        
+        var show_intro = function() {
+            $(".control_input").slideDown(2000);
+        }
     </script>
     </body>
 </html>

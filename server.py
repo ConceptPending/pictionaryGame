@@ -32,6 +32,7 @@ def index():
 def control_display(id):
     random.shuffle(words)
     word = words[0]
+    p['pict_%s' % id].trigger('start_event', "begin")
     return template('control', word=word, id=id)
 
 @post('/save/<id>')
