@@ -6,6 +6,8 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <link href='static/default.css' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="static/fabric.min.js"></script>
+    <script type="text/javascript" src="static/qrcode.js"></script>
+    <script type="text/javascript" src="static/qrcode-gen.js"></script>
     <style>
         #canvas {
             width: 500px;
@@ -25,7 +27,11 @@
     <div class="control_input">
         <h1>Welcome to Pictionary!</h1>
         <h3>It's not really Pictionary... I don't have that trademark.</h3>
-        <p>Anyway, direct a mobile device or tablet to http://pictionary.herokuapp.com/control/{{id}}</p>
+        <p>Anyway, direct a mobile device or tablet to <a href="http://pictionary.herokuapp.com/control/{{id}}">http://pictionary.herokuapp.com/control/{{id}}</a></p>
+        <p>
+            OR... Scan this QR code in a mobile phone:
+        </p>
+        <div id="qr"></div>
         <p>You'll draw on the mobile the word that appears there.</p>
         <input type="button" class="pushButton" onClick="removeDiv()" value="BEGIN">
     </div>
@@ -59,6 +65,7 @@
         channel.bind('my_event', function(data) {
           loadCanvas(data);
         });
+        document.getElementById('qr').innerHTML = create_qrcode("http://pictionary.herokuapp.com/control/{{id}}");
     </script>
     </body>
 </html>

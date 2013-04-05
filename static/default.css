@@ -4,6 +4,12 @@
     background-color: #3AA;
 }
 
+#qr img {
+    width: 164px;
+    height: auto;
+    border solid 4px black;
+}
+
 body {
     background-color: #377;
     margin: 0;
@@ -13,7 +19,7 @@ body {
 .control_input {
     position: absolute;
     margin-left: -450px;
-    margin-top: -200px;
+    margin-top: -300px;
     padding: 0 25px;
     width: 850px;
     left: 50%;
